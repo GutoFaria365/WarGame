@@ -34,36 +34,20 @@
     
 }
 
-.card-header {
-    color: red; 
-    font-size: 24px;
-    font-weight: bold;
-}
 .card-header img {
     width: 50px;
     height: 50px;
 }
 
 .card-body {
-    
-    color: red;
-    font-size: 50px;
-    font-weight: bold;
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-   
+    display: flex; 
 }
 
 .card-footer {
-    color: red;
     transform: rotate(180deg) translateX(100%);
     transform-origin: top right;
     margin-bottom: -60px;
-    font-size: 24px;
-    font-weight: bold;
 }
 .card-footer img {
     width: 50px;
