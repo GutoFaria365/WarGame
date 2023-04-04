@@ -1,3 +1,7 @@
+body {
+    background-color: green
+}
+
 .card {
     position: relative;
     justify-content: space-between;
@@ -9,63 +13,45 @@
     padding: 10px;
     margin: 20px;   
     transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out; 
-
+    transition: transform 0.6s ease-in-out; 
+}
+.cardReverse {
+    position: relative;
+    justify-content: space-between;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 20px;   
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out; 
+    transform: rotateY(180deg);
 }
 
 .card:hover {
     transform: rotateY(180deg);
   }
 
-#front {
-  position:absolute;
-  width: 94%;
-  height: 94%;
-  backface-visibility: hidden; 
-  top: 10;
-  left: 10;
-  bottom: 10;
-  right: 10;
-}
-  
+.cardReverse:hover {
+    transform: rotateY(0deg);
+  }  
+
 .tray {
     display: flex;
     flex-wrap: wrap;
 }
-
-.card-container {
-    width: 100%;
-    height: 100%;
-    background: url('https://ih1.redbubble.net/image.189910612.7582/st,small,507x507-pad,600x600,f8f8f8.u2.jpg');
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-}
-
-#backExemple {
-    width: 100%;
-    height: 100%;
-    background: url('https://ih1.redbubble.net/image.189910612.7582/st,small,507x507-pad,600x600,f8f8f8.u2.jpg');
-    background-size: 14.7%;
-    background-repeat: repeat;
-    display: flex;
-    flex-direction: column; 
-    
-}
-
+  
 .card-header img {
     backface-visibility: hidden;
     width: 50px;
     height: 50px;
-
 }
-
 .card-body {
     flex: 1;
-    display: flex; 
-    
+    display: flex;    
 }
-
 .card-footer {
     backface-visibility: hidden;
     transform: rotate(180deg) translateX(100%);
@@ -75,6 +61,35 @@
 .card-footer img {
     width: 50px;
     height: 50px;
+}
+
+#front {
+    position:absolute;
+    width: 94%;
+    height: 95%;
+    backface-visibility: hidden; 
+     background: url('https://ih1.redbubble.net/image.189910612.7582/st,small,507x507-pad,600x600,f8f8f8.u2.jpg');
+    display: flex;
+    flex-direction: column;
+}
+#backExemple {
+    width: 100%;
+    height: 100%;
+    background: url('https://ih1.redbubble.net/image.189910612.7582/st,small,507x507-pad,600x600,f8f8f8.u2.jpg');
+    background-size: 14.7%;
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;  
+}
+#backReverse {
+    position:absolute;
+    width: 94%;
+    height: 95%;
+    background: url('https://ih1.redbubble.net/image.189910612.7582/st,small,507x507-pad,600x600,f8f8f8.u2.jpg');
+    background-size: 14.7%;
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;   
 }
 
 .cardSmall {
