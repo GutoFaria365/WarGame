@@ -41,7 +41,10 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-  
+#Ace {
+    width: 100px;
+    height: 100px;
+}
 .card-header img {
     backface-visibility: hidden;
     width: 50px;
@@ -130,10 +133,5 @@ body {
 #doubleLineBottom3 img {
     width: 20px;
     height: 20px;
-}
-span i {
-    font-size: 26px;
-    color: rgb(107, 22, 22);
-    padding-left: 0px;
 }
 
