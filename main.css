@@ -37,11 +37,12 @@ body {
 .cardReverse:hover {
     transform: rotateY(0deg);
   }  
+
 .tray {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Three equal-width columns */
-    grid-template-rows: repeat(1, 1fr); /* Three equal-height rows */
-    grid-gap: 20px; /* Spacing between grid items */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 20px;
 }
 #Ace {
     width: 100px;
@@ -52,6 +53,7 @@ body {
     width: 50px;
     height: 50px;
 }
+
 #figure {
     width: 30px;
     height: 30px;
@@ -137,3 +139,7 @@ body {
     height: 20px;
 }
 
+#button {
+    color: red;
+    border-radius: 20px;
+}

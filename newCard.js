@@ -9,4 +9,5 @@ function changeImage(imageArray) {
     var randomIndex = Math.floor(Math.random() * imageArray.length);
     img.src = imageArray[randomIndex];
     img2.src = img.src;
+    
   }

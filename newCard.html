@@ -13,13 +13,11 @@
             <div class="card-container" id="backReverse"></div> 
             <div class="card-container" id="front">
                 <div class="card-header"><img src=assets\Heart.png alt="Heart" id="Ace"></div>
-                <div class="card-body" id="body">
-                    
-                </div>
-                <div class="card-footer"><img id="image" src=assets\Heart.png alt="Heart" id="image"></div>
+                <div class="card-body" id="body"></div>
+                <div class="card-footer"><img src=assets\Heart.png alt="Heart" id="image"></div>
             </div>    
         </div>
     <script src="newCard.js"></script>
-    <button onclick="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">Click to change image</button>
+    <button id="button" onclick="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">Click to change image</button>
     <button onclick="changeText(Math.random() * 2)">Click to change text</button>
 </body>

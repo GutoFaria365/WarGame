@@ -32,17 +32,11 @@
     }
 }
   
-/* .item-0{
-  display: grid;
-} */
-
-
 .container img{
     grid-area: test;
     max-width: 50%;
     margin: auto;
 }
-
 
 .center-image{
   display: flex;
