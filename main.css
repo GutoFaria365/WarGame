@@ -38,8 +38,10 @@ body {
     transform: rotateY(0deg);
   }  
 .tray {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Three equal-width columns */
+    grid-template-rows: repeat(1, 1fr); /* Three equal-height rows */
+    grid-gap: 20px; /* Spacing between grid items */
 }
 #Ace {
     width: 100px;

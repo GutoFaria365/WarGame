@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Card</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="card"> 
+            <div class="card-container" id="backReverse"></div> 
+            <div class="card-container" id="front">
+                <div class="card-header"><img src=assets\Heart.png alt="Heart" id="Ace"></div>
+                <div class="card-body" id="body">
+                    
+                </div>
+                <div class="card-footer"><img id="image" src=assets\Heart.png alt="Heart" id="image"></div>
+            </div>    
+        </div>
+    <script src="newCard.js"></script>
+    <button onclick="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">Click to change image</button>
+    <button onclick="changeText(Math.random() * 2)">Click to change text</button>
+</body>
