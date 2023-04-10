@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body onload="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">
+    <div class="card"> 
+        <div class="card-container" id="backReverse"></div> 
+        <div class="card-container" id="front">
+            <div class="card-header">
+                <img src=default id="topSuits">
+                <img src=default id="topValues">
+            </div>
+            <div class="card-body" id="body"></div>
+            <div class="card-footer">
+                <img src=default id="botSuits">
+                <img src=default id="botValues">
+            </div>
+        </div>    
+    </div>
+    
+    <script src="deck.js"></script>
+</body>
+</html>
