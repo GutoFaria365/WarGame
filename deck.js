@@ -37,6 +37,7 @@ function createDeck() {
             deck.push(createCard(suit, value));
         }); 
     });
+    return deck;
 }
 
 // function shuffleDeck(deck) {
@@ -57,4 +58,9 @@ function createDeck() {
 createDeck();
 shuffleDeck(deck);
 
-export {shuffledDeck};
+// console.log("Deck:")
+// console.log(deck)
+// console.log("Shuffled Deck:")
+// console.log(shuffledDeck)
+
+export {shuffledDeck, createDeck, shuffleDeck};

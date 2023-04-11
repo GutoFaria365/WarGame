@@ -1,12 +1,20 @@
-import { shuffledDeck } from "./deck.js";
+import {shuffledDeck, createDeck, shuffleDeck} from "./deck.js";
 
-const p1Deck = [];
-const p2Deck = [];
+let playerDeck = [];
+let computerDeck = [];
 
 const dealCards = () => {
-    p1Deck = shuffledDeck.slice(0, shuffledDeck.length/2)
-    p2Deck = shuffledDeck.slice(shuffledDeck.length/2, shuffledDeck.length)
+    playerDeck = shuffledDeck.slice(0, shuffledDeck.length / 2)
+    computerDeck = shuffledDeck.slice(shuffledDeck.length / 2, shuffledDeck.length)
+    return {playerDeck, computerDeck}
 }
 
+function startGame() {
+    shuffleDeck(createDeck());
+
+}
+
+startGame
 dealCards();
-console.log(p1Deck, p2Deck);
+console.log("Player 1 and Player 2 decks:")
+console.log(playerDeck, computerDeck);
