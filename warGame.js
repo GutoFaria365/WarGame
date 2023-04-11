@@ -12,13 +12,15 @@ const dealCards = () => {
 }
 
 function startGame() {
+    
     shuffleDeck(createDeck());
     dealCards();
 
+    console.log("Shuffled deck:")
+    console.log(shuffledDeck)
+    console.log("Player 1 and Player 2 decks:")
+    console.log(playerDeck, computerDeck);
 }
 
-startGame()
-
-console.log(shuffledDeck)
-console.log("Player 1 and Player 2 decks:")
-console.log(playerDeck, computerDeck);
+const button = document.getElementById('starGame');
+button.addEventListener('click', startGame);
