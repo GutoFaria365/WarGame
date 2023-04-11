@@ -1,0 +1,62 @@
+ /*
+
+function changeImage(imageArray) {
+        var sTopImg = document.getElementById("topSuits");
+        var vTopImg = document.getElementById("topValues");
+        var sBotImg = document.getElementById("botSuits");
+        var vBotImg = document.getElementById("botValues");
+
+        var randomIndex = Math.floor(Math.random() * imageArray.length);
+        sTopImg.src = suit;
+        vTopImg.src = value;
+        sBotImg.src = sTopImg.src;
+        vBotImg.src = vTopImg.src;
+
+    }
+    
+    */
+    const SUITS = {
+        HEART: "heart",
+        CLUB: "club",
+        DIAMOND: "diamond",
+        SPADE: "spade",
+    }
+    const VALUES = [2,3,4,5,6,7,8,9,10,'j','q','k','a']
+
+    function getHands(deck) {
+        const shuffledDeck = [];
+        deck.forEach(() => {
+            const randomCard = Math.floor(Math.random() * deck.length)
+            shuffledDeck.push(deck[randomCard])
+        });
+
+        const p1Deck = shuffledDeck.slice(0, (shuffledDeck.length / 2));
+        const p2Deck = shuffledDeck.slice((shuffledDeck.length / 2), shuffledDeck.length);
+        return { p1Deck, p2Deck };
+    }
+    
+    const totalCards = VALUES.reduce((acc, value) => {
+        acc.push({suit: SUITS.HEART, value});
+        acc.push({suit: SUITS.CLUB, value});
+        acc.push({suit: SUITS.DIAMOND, value});
+        acc.push({suit: SUITS.SPADE, value});
+        return acc;
+    }, []);
+
+
+    const startGame = () => {
+        const { p1Deck, p2Deck } = getHands(totalCards);
+
+
+        // start counter of rounds
+        // play round in loop - until someone wins
+
+        console.log("----------")
+        console.log(totalCards)
+        console.log("----------")
+        
+        console.log("p1Deck", p1Deck)
+        console.log("p2Deck", p2Deck)
+    }
+
+    startGame();
