@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Card</title>
-    <link rel="icon" type="image/jpg" href="assets/background.jpg">
-	<link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="icon" type="image/jpg" href="/assets/background.jpg">
+	<link rel="stylesheet" type="text/css" href="/main.css">
     
 </head>
-<body onload="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">
+<body onload="changeImage(['/assets/Heart.png', '/assets/Club.png', '/assets/Diamond.png', '/assets/Spade.png'])">
     <div class="card"> 
             <div class="card-container" id="backReverse"></div> 
             <div class="card-container" id="front">
@@ -19,6 +19,6 @@
             </div>    
         </div>
     <script src="newCard.js"></script>
-    <button id="button" onclick="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">Click to change image</button>
+    <button id="button" onclick="changeImage(['/assets/Heart.png', '/assets/Club.png', '/assets/Diamond.png', '/assets/Spade.png'])">Click to change image</button>
     <button onclick="changeText(Math.random() * 2)">Click to change text</button>
 </body>
