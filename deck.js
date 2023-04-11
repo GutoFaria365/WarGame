@@ -16,7 +16,7 @@ function changeImage(imageArray) {
 const suits = ['heart', 'club', 'diamond', 'spade']
 const values = [2,3,4,5,6,7,8,9,10,'j','q','k','a']
 const deck = []
-const shuffledDeck = [];
+let shuffledDeck = [];
 
 // function card(suit, value) {
 //     this.suit = suit;
@@ -40,27 +40,20 @@ function createDeck() {
     return deck;
 }
 
-// function shuffleDeck(deck) {
-//     for (let i = deck.length - 1; i > 0; i--) {
-//       const j = Math.floor(Math.random() * (i + 1));
-//       [deck[i], deck[j]] = [deck[j], deck[i]];
-//     }
-//     return deck;
-//   }
-       
- function shuffleDeck(deck) {
-    deck.forEach(card => {
-        const randomCard = Math.floor(Math.random() * deck.length)
-        shuffledDeck.push(deck[randomCard])
-    })
+function shuffleDeck(deck) {
+    shuffledDeck = [... deck]
+    for (let i = shuffledDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
+    }
+    return shuffledDeck;
 }
-
-createDeck();
-shuffleDeck(deck);
-
-// console.log("Deck:")
-// console.log(deck)
-// console.log("Shuffled Deck:")
-// console.log(shuffledDeck)
+       
+//  function shuffleDeck(deck) {
+//     deck.forEach(card => {
+//         const randomCard = Math.floor(Math.random() * deck.length)
+//         shuffledDeck.push(deck[randomCard])
+//     })
+// }
 
 export {shuffledDeck, createDeck, shuffleDeck};
