@@ -51,6 +51,8 @@ const playRound = () => {
     let playerCard = playerDeck.shift();
     let computerCard = computerDeck.shift();
     changeImage(playerCard, computerCard);
+    card.style.display = "block"
+    card2.style.display = "block"
     playedPile.push(playerCard, computerCard);
     updateDeckCount()
 
@@ -115,6 +117,8 @@ function gameOverCheck() {
 
 const button = document.getElementById('startGame');
 button.addEventListener('click', startGame);
-
 const button2 = document.getElementById('nextRound');
 button2.addEventListener('click', playRound);
+
+const card = document.getElementById('card');
+const card2 = document.getElementById('card2');
