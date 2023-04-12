@@ -4,21 +4,34 @@ function changeImage(card1, card2) {
     var vTopImg = document.getElementById("topValues");
     var sBotImg = document.getElementById("botSuits");
     var vBotImg = document.getElementById("botValues");
-
-    sTopImg.src = SUIT_IMAGE[card1.suit];
-    vTopImg.src = VALUE_IMAGE[card1.value];
-    sBotImg.src = sTopImg.src;
-    vBotImg.src = vTopImg.src;
-
     var sTopImg2 = document.getElementById("topSuits2");
     var vTopImg2 = document.getElementById("topValues2");
     var sBotImg2 = document.getElementById("botSuits2");
     var vBotImg2 = document.getElementById("botValues2");
 
+    sTopImg.src = SUIT_IMAGE[card1.suit];
+    if(card1.suit === "heart" || card1.suit === "diamond"){
+        vTopImg.style.color = "red"
+        vBotImg.style.color = "red"
+    } else {
+        vTopImg.style.color = "black"
+        vBotImg.style.color = "black"
+    }
+    vTopImg.innerHTML = card1.value;
+    sBotImg.src = sTopImg.src;
+    vBotImg.innerHTML = vTopImg.innerHTML;
+
     sTopImg2.src = SUIT_IMAGE[card2.suit];
-    vTopImg2.src = VALUE_IMAGE[card2.value];
+    if(card2.suit === "heart" || card2.suit === "diamond"){
+        vTopImg2.style.color = "red"
+        vBotImg2.style.color = "red"
+    } else {
+        vTopImg2.style.color = "black"
+        vBotImg2.style.color = "black"
+    }
+    vTopImg2.innerHTML = card2.value;
     sBotImg2.src = sTopImg2.src;
-    vBotImg2.src = vTopImg2.src;
+    vBotImg2.innerHTML = vTopImg2.innerHTML;
 }
 const SUIT_IMAGE = {
     "heart": "assets/Heart.png",
@@ -26,23 +39,6 @@ const SUIT_IMAGE = {
     "diamond": "assets/Diamond.png",
     "spade": "assets/Spade.png"
 };
-const CARD_VALUES = {
-    "2" : "",
-    "3" : 3,
-    "4" : 4,
-    "5" : 5,
-    "6" : 6,
-    "7" : 7,
-    "8" : 8,
-    "9" : 9,
-    "10" : 10,
-    "J" : ,
-    "Q" : 12,
-    "K" : 13,
-    "A" : 14
-}
-
-
 
 
 const suits = ["heart", "club", "diamond", "spade"];
