@@ -11,6 +11,14 @@
 
 <body>
     <div class="board">
+        <div class="BUTTONS">
+            <button id="startGame" style="display:block">Start</button>
+            <button id="nextRound" style="display:none">next</button>
+        </div>
+        <div class="CARDS"></div>
+        <div class="cardReverse">
+            <div class="card-container" id="backReverse"></div> 
+        </div>
         <div class="card"> 
             <div class="card-container" id="backReverse"></div> 
             <div class="card-container" id="front">
@@ -29,23 +37,27 @@
             <div class="card-container" id="backReverse"></div> 
             <div class="card-container" id="front">
                 <div class="card-header">
-                    <img src=default id="topSuits">
-                    <img src=default id="topValues">
+                    <img src=default id="topSuits2">
+                    <img src=default id="topValues2">
                 </div>
                 <div class="card-body" id="body"></div>
                 <div class="card-footer">
-                    <img src=default id="botSuits">
-                    <img src=default id="botValues">
+                    <img src=default id="botSuits2">
+                    <img src=default id="botValues2">
                 </div>
             </div>    
         </div>
-        <div class="counter">counter</div>
-        <div class="counter">counter2</div>
+        <div class="cardReverse2">
+            <div class="card-container" id="backReverse"></div> 
+        </div>
+        <div class="INFORMATION_AREA"></div>
+        <div class="COUNTER1">counter1</div>
+        <div class="MESSAGES"></div>
+        <div class="COUNTER2">counter2</div>
     </div>
     
     <script src="deck.js" type="module"></script>
     <script src="warGame.js" type="module"></script>
-    <button id="startGame" style="display:block">Start</button>
-    <button id="nextRound" style="display:none">next</button>
+    
 </body>
 </html>

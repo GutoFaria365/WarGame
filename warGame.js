@@ -1,4 +1,4 @@
-import {shuffledDeck, createDeck, shuffleDeck} from "./deck.js";
+import {shuffledDeck, createDeck, shuffleDeck, changeImage} from "./deck.js";
 
 let playerDeck = [];
 let pDeckCount = playerDeck.length;
@@ -21,6 +21,7 @@ const CARD_VALUES = {
     "K" : 13,
     "A" : 14
 }
+
 
 function startGame() {
     button.style.display = "none"
@@ -49,6 +50,7 @@ const playRound = () => {
 
     let playerCard = playerDeck.shift();
     let computerCard = computerDeck.shift();
+    changeImage(playerCard, computerCard);
     playedPile.push(playerCard, computerCard);
     updateDeckCount()
 

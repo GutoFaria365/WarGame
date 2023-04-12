@@ -1,15 +1,70 @@
 body {
     background-color: green;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+     
+}
+.board{  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+}
+.BUTTONS { 
+    grid-area: 3 / 1 / 4 / 5;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    
+ }
+
+ #startGame, #nextRound{
+    width: 100px;
+    height:80px ;
+    font-size: larger;
+ }
+
+.CARDS { grid-area: 2 / 1 / 3 / 5; }
+
+.cardReverse { 
+    grid-area: 2 / 1 / 3 / 2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.countainer{
-    
+
+.card { 
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+      
+.card2 { grid-area: 2 / 3 / 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+      
+.cardReverse2 { grid-area: 2 / 4 / 3 / 5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.INFORMATION_AREA { grid-area: 1 / 1 / 2 / 5; }
+      
+.COUNTER1 { grid-area: 1 / 1 / 2 / 2; }
+      
+.MESSAGES { grid-area: 1 / 2 / 2 / 4; }
+      
+.COUNTER2 { grid-area: 1 / 4 / 2 / 5; }
+      
    
-}
 .card {
     position: relative;
     justify-content: space-between;
@@ -37,6 +92,20 @@ body {
     transition: transform 0.6s ease-in-out; 
 }
 .cardReverse {
+    position: relative;
+    justify-content: space-between;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 20px;   
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out; 
+    transform: rotateY(180deg);
+}
+.cardReverse2 {
     position: relative;
     justify-content: space-between;
     width: 300px;
