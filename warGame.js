@@ -21,17 +21,10 @@ const CARD_VALUES = {
     "K" : 13,
     "A" : 14
 }
-const dealCards = () => {
-    const midPoint = Math.ceil(shuffledDeck.length / 2)
-
-    playerDeck = shuffledDeck.slice(0, midPoint)
-    computerDeck = shuffledDeck.slice(midPoint, shuffledDeck.length)
-    return {playerDeck, computerDeck}
-}
-
-
 
 function startGame() {
+    button.style.display = "none"
+    button2.style.display = "block"
     shuffleDeck(createDeck());
     dealCards();
 
@@ -41,7 +34,19 @@ function startGame() {
 
 }
 
-const playRound = () =>{
+const dealCards = () => {
+    const midPoint = Math.ceil(shuffledDeck.length / 2)
+    playerDeck = shuffledDeck.slice(0, midPoint)
+    computerDeck = shuffledDeck.slice(midPoint, shuffledDeck.length)
+    return {playerDeck, computerDeck}
+}
+
+const playRound = () => { 
+    if(gameOverCheck()) {
+        console.log("END GANE")
+        return;
+    }
+
     let playerCard = playerDeck.shift();
     let computerCard = computerDeck.shift();
     playedPile.push(playerCard, computerCard);
@@ -53,6 +58,14 @@ const playRound = () =>{
 
     checkRoundWinner(playerCard, computerCard);
 };
+
+function updateDeckCount(){
+    pDeckCount = playerDeck.length;
+    cDeckCount = computerDeck.length;
+    console.log(`Player deck ${pDeckCount}`)
+    console.log(`Computer deck ${cDeckCount}`)
+    console.log(`Pile ${playedPile.length}`)
+}
 
 function checkRoundWinner(playerCard, computerCard) {
     let card1 = CARD_VALUES[playerCard.value]
@@ -78,60 +91,28 @@ function checkRoundWinner(playerCard, computerCard) {
 }
 
 function goWar(){
-        // let playerWarDeck =  playerDeck.splice(0, 2);
-        // let computerWarDeck = computerDeck.splice(0, 2);
         playedPile = playedPile.concat(playerDeck.splice(0, 3), computerDeck.splice(0, 3));
         gameOverCheck();
         updateDeckCount()
         playRound();
-  
-}
-
-function cleanRound(){ 
-
-    updateDeckCount()
-
 }
 
 function gameOverCheck() {
-    if (playerDeck.length < 4) {
-        playerDeck = [...playerPile];
-        playerPile = [];
-        shuffleDeck(playerDeck);
-    }
-    if (computerDeck.length < 4) {
-        computerDeck = [...computerPile];
-        computerPile = [];
-        shuffleDeck(computerDeck);
-    }
+    if (playerDeck.length <= 0 || computerDeck <= 0) {
+        playerDeck = [];
+        computerDeck = [];
+        playedPile = []
+        button.style.display = "block"
+        button2.style.display = "none"
+        return true;
+    }  
+    return false;
 }
 
-function updateDeckCount(){
-    pDeckCount = playerDeck.length;
-    cDeckCount = computerDeck.length;
-    console.log(`Player deck ${pDeckCount}`)
-    console.log(`Computer deck ${cDeckCount}`)
-    console.log(`Pile ${playedPile.length}`)
-}
+
 
 const button = document.getElementById('startGame');
 button.addEventListener('click', startGame);
 
 const button2 = document.getElementById('nextRound');
 button2.addEventListener('click', playRound);
-
-/*const playGame = () => {
-  shuffleDeck(createDeck());
-  dealCards();
-  
-  while (playerDeck.length > 0 && computerDeck.length > 0) {
-    playRound();
-  }
-  
-  if (playerDeck.length === 0) {
-    console.log("Computer wins the game!");
-  } else if (computerDeck.length === 0) {
-    console.log("Player wins the game!");
-  }
-};*/
-

@@ -13,9 +13,9 @@ function changeImage(imageArray) {
 }
 
 
-const suits = ["heart", "club", "diamond", "spade"]
-const values = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
-const deck = []
+const suits = ["heart", "club", "diamond", "spade"];
+const values = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+let deck = [];
 let shuffledDeck = [];
 
 // function card(suit, value) {
@@ -32,6 +32,7 @@ function createCard(suit, value) {
 }
  
 function createDeck() {
+    deck = []
     suits.forEach(suit => {
         values.forEach(value => {
             deck.push(createCard(suit, value));
