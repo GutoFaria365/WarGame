@@ -10,7 +10,8 @@
 </head>
 
 <body onload="changeImage(['assets/Heart.png', 'assets/Club.png', 'assets/Diamond.png', 'assets/Spade.png'])">
-    <div class="card"> 
+    <div class="board">
+        <div class="card"> 
         <div class="card-container" id="backReverse"></div> 
         <div class="card-container" id="front">
             <div class="card-header">
@@ -24,6 +25,23 @@
             </div>
         </div>    
     </div>
+    <div class="card2"> 
+        <div class="card-container" id="backReverse"></div> 
+        <div class="card-container" id="front">
+            <div class="card-header">
+                <img src=default id="topSuits">
+                <img src=default id="topValues">
+            </div>
+            <div class="card-body" id="body"></div>
+            <div class="card-footer">
+                <img src=default id="botSuits">
+                <img src=default id="botValues">
+            </div>
+        </div>    
+    </div>
+    <div class="counter">counter</div>
+    <div class="counter">counter2</div>
+</div>
     
     <script src="deck.js" type="module"></script>
     <script src="warGame.js" type="module"></script>
