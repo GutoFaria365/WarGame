@@ -58,11 +58,17 @@ body {
 
 .INFORMATION_AREA { grid-area: 1 / 1 / 2 / 5; }
       
-.COUNTER1 { grid-area: 1 / 1 / 2 / 2; }
+.COUNTER1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    
+}
       
 .MESSAGES { grid-area: 1 / 2 / 2 / 4; }
       
-.COUNTER2 { grid-area: 1 / 4 / 2 / 5; }
+.COUNTER2 { 
+    grid-area: 1 / 4 / 2 / 5; 
+
+}
       
    
 .card {

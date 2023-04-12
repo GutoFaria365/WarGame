@@ -28,6 +28,8 @@ function startGame() {
     button2.style.display = "block"
     shuffleDeck(createDeck());
     dealCards();
+    counter1.innerHTML = pDeckCount;
+    counter2.innerHTML = cDeckCount;
 
     console.log(shuffledDeck)
     console.log("Player 1 and Player 2 decks: ")
@@ -66,6 +68,8 @@ const playRound = () => {
 function updateDeckCount(){
     pDeckCount = playerDeck.length;
     cDeckCount = computerDeck.length;
+    counter1.innerHTML = pDeckCount;
+    counter2.innerHTML = cDeckCount;
     console.log(`Player deck ${pDeckCount}`)
     console.log(`Computer deck ${cDeckCount}`)
     console.log(`Pile ${playedPile.length}`)
@@ -122,3 +126,6 @@ button2.addEventListener('click', playRound);
 
 const card = document.getElementById('card');
 const card2 = document.getElementById('card2');
+
+const counter1 = document.getElementById('counter1');
+const counter2 = document.getElementById('counter2');
