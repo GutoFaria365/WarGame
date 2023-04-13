@@ -49,14 +49,19 @@ const playRound = () => {
         console.log("END GANE")
         return;
     }
+    button2.style.display = "none"
+    setDeckCards();
     hidePlayedCards();
-    slideAniOn()
-    setTimeout(slideAniOff, 700);
+    setTimeout(slideAniOn, 500);
+    setTimeout(rotateCardOn, 1000);
     
     let playerCard = playerDeck.shift();
     let computerCard = computerDeck.shift();
     setTimeout(changeImage, 500, playerCard, computerCard);
-    setTimeout(setPlayedCards, 550);
+    setTimeout(setPlayedCards, 1100);
+    setTimeout(hideDeckCards, 1100);
+    setTimeout(rotateCardOff, 2100);
+    setTimeout(slideAniOff, 2100);
     playedPile.push(playerCard, computerCard);
     updateDeckCount()
 
@@ -64,7 +69,6 @@ const playRound = () => {
     console.log(`Computer plays ${computerCard.value} of ${computerCard.suit}`);
 
     checkRoundWinner(playerCard, computerCard);
-   
 };
 
 function setPlayedCards() {
@@ -75,6 +79,14 @@ function hidePlayedCards() {
     card.style.display = "none";
     card2.style.display = "none";
 }
+function setDeckCards() {
+    cardReverse.style.display = "block";
+    cardReverse2.style.display = "block";
+}
+function hideDeckCards() {
+    cardReverse.style.display = "none";
+    cardReverse2.style.display = "none";
+}
 function slideAniOn() {
     cardContainer.classList.add('animate-card');
     cardContainer2.classList.add('animate-card2');
@@ -82,7 +94,19 @@ function slideAniOn() {
 function slideAniOff() {
     cardContainer.classList.remove('animate-card');
     cardContainer2.classList.remove('animate-card2');
+    button2.style.display = "block"
 }
+
+function rotateCardOn() {
+    cardContainer.classList.add('rotate-card');
+    cardContainer2.classList.add('rotate-card2');
+}
+
+function rotateCardOff() {
+    cardContainer.classList.remove('rotate-card');
+    cardContainer2.classList.remove('rotate-card2');
+}
+
 
 function updateDeckCount(){
     pDeckCount = playerDeck.length;
@@ -145,6 +169,9 @@ button2.addEventListener('click', playRound);
 
 const card = document.getElementById('card');
 const card2 = document.getElementById('card2');
+
+const cardReverse = document.getElementById('cardReverse');
+const cardReverse2 = document.getElementById('cardReverse2');
 
 const counter1 = document.getElementById('counter1');
 const counter2 = document.getElementById('counter2');
