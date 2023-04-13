@@ -77,8 +77,27 @@ body {
     align-content: center;  
 }
 
-.INFORMATION_AREA { grid-area: 1 / 1 / 2 / 5; }
-      
+.INFORMATION_AREA { 
+    grid-area: 1 / 1 / 2 / 5; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:start;
+    align-self:top;
+    font-size: 50px;
+    color: #ffffff;
+}
+.INFORMATION_AREA2 { 
+    grid-area: 1 / 4 / 2 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:end;
+    align-self: top;
+    font-size: 50px;
+    color: #ffffff;
+}    
+
 .COUNTER1 { 
     grid-area: 1 / 1 / 2 / 2; 
     display: flex;
@@ -90,7 +109,16 @@ body {
     color: #ffffff;
 }
       
-.MESSAGES { grid-area: 1 / 2 / 2 / 4; }
+.MESSAGES { 
+    grid-area: 1 / 2 / 2 / 4; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    color: #ffffff;
+    font-size:300%;
+}
       
 .COUNTER2 { 
     grid-area: 1 / 4 / 2 / 5; 

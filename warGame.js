@@ -30,6 +30,7 @@ function startGame() {
     dealCards();
     counter1.innerHTML = pDeckCount;
     counter2.innerHTML = cDeckCount;
+    updateDeckCount();
 
     console.log(shuffledDeck)
     console.log("Player 1 and Player 2 decks: ")
@@ -47,8 +48,10 @@ const dealCards = () => {
 const playRound = () => { 
     if(gameOverCheck()) {
         console.log("END GANE")
+        messages.innerHTML = "END GANE";
         return;
     }
+    messages.innerHTML = "";
     button2.style.display = "none"
     setDeckCards();
     hidePlayedCards();
@@ -63,12 +66,12 @@ const playRound = () => {
     setTimeout(rotateCardOff, 2100);
     setTimeout(slideAniOff, 2100);
     playedPile.push(playerCard, computerCard);
-    updateDeckCount()
+    setTimeout(updateDeckCount, 900);
 
     console.log(`Player plays ${playerCard.value} of ${playerCard.suit}`);
     console.log(`Computer plays ${computerCard.value} of ${computerCard.suit}`);
 
-    checkRoundWinner(playerCard, computerCard);
+    setTimeout(checkRoundWinner, 2200, playerCard, computerCard);
 };
 
 function setPlayedCards() {
@@ -126,16 +129,19 @@ function checkRoundWinner(playerCard, computerCard) {
         playerDeck = playerDeck.concat(playedPile)
         playedPile = [];
         updateDeckCount()
-        console.log("Player wins the roud");
+        console.log("Player wins the round");
+        messages.innerHTML = "Player wins the round";
 
     } else if(card1 < card2) {
         computerDeck = computerDeck.concat(playedPile)
         playedPile = [];
         updateDeckCount()
         console.log("Computer wins the round");
+        messages.innerHTML = "Computer wins the round";
 
     } else {
-        console.log("It's a tie. Let's go to war!");
+        console.log("It's a tie. Let's go to WAR!");
+        messages.innerHTML = "It's a tie. Let's go to WAR!";
         goWar();
 
     }
@@ -145,7 +151,7 @@ function goWar(){
         playedPile = playedPile.concat(playerDeck.splice(0, 3), computerDeck.splice(0, 3));
         gameOverCheck();
         updateDeckCount()
-        playRound();
+        setTimeout(playRound, 1500);
 }
 
 function gameOverCheck() {
@@ -180,3 +186,5 @@ const cardContainer = document.querySelector('.cardReverse');
 const cardContainer2 = document.querySelector('.cardReverse2');
 
 const flipSound = document.getElementById("flip-sound");
+
+const messages = document.getElementById('messages');
