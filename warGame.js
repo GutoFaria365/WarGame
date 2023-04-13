@@ -52,14 +52,14 @@ const playRound = () => {
     button2.style.display = "none"
     setDeckCards();
     hidePlayedCards();
-    setTimeout(slideAniOn, 500);
-    setTimeout(rotateCardOn, 1000);
+    setTimeout(slideAniOn, 900);
+    setTimeout(rotateCardOn, 1400);
     
     let playerCard = playerDeck.shift();
     let computerCard = computerDeck.shift();
     setTimeout(changeImage, 500, playerCard, computerCard);
-    setTimeout(setPlayedCards, 1100);
-    setTimeout(hideDeckCards, 1100);
+    setTimeout(setPlayedCards, 1500);
+    setTimeout(hideDeckCards, 1600);
     setTimeout(rotateCardOff, 2100);
     setTimeout(slideAniOff, 2100);
     playedPile.push(playerCard, computerCard);
