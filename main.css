@@ -136,6 +136,8 @@ body {
     margin: 20px;   
     transform-style: preserve-3d;
     transition: transform 0.6s ease-in-out; 
+    position: relative;
+    
 }
 .deck2 {
     width: 300px;
@@ -234,8 +236,9 @@ body {
     height: 95%;
     background: url('https://ih1.redbubble.net/image.189910612.7582/st,small,507x507-pad,600x600,f8f8f8.u2.jpg');
     background-size: 14.7%;
-    background-repeat: repeat; 
-    background-position: center center;
+    background-repeat: repeat;
+    transform: translate(3%, 2.5%);
+ 
    
 }
 
