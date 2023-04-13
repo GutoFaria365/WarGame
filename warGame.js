@@ -51,8 +51,9 @@ const playRound = () => {
         messages.innerHTML = "END GANE";
         return;
     }
+   
     messages.innerHTML = "";
-    button2.style.display = "none"
+    button2.style.display = "none";
     setDeckCards();
     hidePlayedCards();
     setTimeout(slideAniOn, 900);
@@ -131,7 +132,6 @@ function checkRoundWinner(playerCard, computerCard) {
         updateDeckCount()
         console.log("Player wins the round");
         messages.innerHTML = "Player wins the round";
-
     } else if(card1 < card2) {
         computerDeck = computerDeck.concat(playedPile)
         playedPile = [];
@@ -148,10 +148,13 @@ function checkRoundWinner(playerCard, computerCard) {
 }
 
 function goWar(){
-        playedPile = playedPile.concat(playerDeck.splice(0, 3), computerDeck.splice(0, 3));
-        gameOverCheck();
-        updateDeckCount()
-        setTimeout(playRound, 1500);
+    setTimeout(addCardsToDeck, 100);
+    setTimeout(addCardsToDeck, 200);
+    setTimeout(addCardsToDeck, 300);
+    playedPile = playedPile.concat(playerDeck.splice(0, 3), computerDeck.splice(0, 3));
+    gameOverCheck();
+    updateDeckCount()
+    setTimeout(playRound, 1500);
 }
 
 function gameOverCheck() {
@@ -188,3 +191,46 @@ const cardContainer2 = document.querySelector('.cardReverse2');
 const flipSound = document.getElementById("flip-sound");
 
 const messages = document.getElementById('messages');
+
+const cardDiv = document.getElementById('completeDeck');
+const cardDiv2 = document.getElementById('completeDeck2');
+
+;
+
+
+function addCardsToDeck() {
+    const newCardDiv = document.createElement('div');
+    newCardDiv.classList.add("cardReverseWar");
+    newCardDiv.id="cardReverseWar";
+    cardDiv.appendChild(newCardDiv);
+    const insideCardDiv = document.createElement('div');
+    insideCardDiv.classList.add("card-container");
+    insideCardDiv.id="backReverse";
+    newCardDiv.appendChild(insideCardDiv);
+    newCardDiv.style.display ="block"
+    
+    const newCardDiv2 = document.createElement('div');
+    newCardDiv2.classList.add("cardReverseWar2");
+    newCardDiv2.id="cardReverseWar2";
+    cardDiv2.appendChild(newCardDiv2);
+    const insideCardDiv2 = document.createElement('div');
+    insideCardDiv2.classList.add("card-container");
+    insideCardDiv2.id="backReverse";
+    newCardDiv2.appendChild(insideCardDiv2);
+    newCardDiv2.style.display ="block"
+
+    setTimeout(animateCard, 0, newCardDiv, newCardDiv2);
+    setTimeout(eraseWarCards, 2500, newCardDiv, newCardDiv2)
+    
+}
+  
+function animateCard(cardDiv, cardDiv2) {
+    flipSound.play();
+    cardDiv.classList.add('animate-war');
+    cardDiv2.classList.add('animate-war2');
+}
+function eraseWarCards(cardDiv, cardDiv2) {
+    cardDiv.style.display ="none"
+    cardDiv2.style.display ="none"
+}
+  

@@ -45,6 +45,13 @@ body {
     align-items: center;
     z-index: 2;
 }
+.cardReverseWar { 
+    grid-area: 2 / 1 / 3 / 2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
 
 .card { 
     grid-area: 2 / 2 / 3 / 3;
@@ -61,7 +68,14 @@ body {
     align-items: center;
     z-index: 1;
 }
-      
+    
+.cardReverseWar2 { 
+    grid-area: 2 / 1 / 3 / 2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
 .cardReverse2 { 
     grid-area: 2 / 4 / 3 / 5; 
     display: flex;
@@ -191,6 +205,20 @@ body {
     transition: transform 0.6s ease-in-out; 
 
 }
+.cardReverseWar {
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 20px;   
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out; 
+    transform: rotateY(-90deg) rotateX(-90deg);
+    
+
+}
 
 .cardReverse2 {
     width: 300px;
@@ -205,12 +233,33 @@ body {
  
 }
 
+.cardReverseWar2 {
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 20px;   
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out; 
+    transform: rotateY(-90deg) rotateX(-90deg)
+
+}
+
 .animate-card {
     transform: translateX(113%);   
 }
 .animate-card2 {
     transform: translateX(-113%);
 }
+.animate-war {
+    transform: translateX(113%) translateY(10%); 
+}
+.animate-war2 {
+    transform: translateX(-113%) translateY(10%);
+}
+
 .rotate-card {
     transform: translate(113%) rotateY(180deg);
     transition: transform 0.2s ease-in-out; 
@@ -278,6 +327,14 @@ body {
     transform: rotateY(0deg);
   }   */
   
+  .slide-from-right {
+    animation: slide-from-right 1s;
+  }
+  
+  @keyframes slide-from-right {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+  }
 
 #Ace {
     width: 100px;
