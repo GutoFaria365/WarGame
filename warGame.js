@@ -90,6 +90,7 @@ function hideDeckCards() {
 function slideAniOn() {
     cardContainer.classList.add('animate-card');
     cardContainer2.classList.add('animate-card2');
+    flipSound.play();
 }
 function slideAniOff() {
     cardContainer.classList.remove('animate-card');
@@ -106,7 +107,6 @@ function rotateCardOff() {
     cardContainer.classList.remove('rotate-card');
     cardContainer2.classList.remove('rotate-card2');
 }
-
 
 function updateDeckCount(){
     pDeckCount = playerDeck.length;
@@ -178,3 +178,5 @@ const counter2 = document.getElementById('counter2');
 
 const cardContainer = document.querySelector('.cardReverse');
 const cardContainer2 = document.querySelector('.cardReverse2');
+
+const flipSound = document.getElementById("flip-sound");
