@@ -148,6 +148,7 @@ function checkRoundWinner(playerCard, computerCard) {
 }
 
 function goWar(){
+    warSound.play();
     setTimeout(addCardsToDeck, 100);
     setTimeout(addCardsToDeck, 200);
     setTimeout(addCardsToDeck, 300);
@@ -189,7 +190,7 @@ const cardContainer = document.querySelector('.cardReverse');
 const cardContainer2 = document.querySelector('.cardReverse2');
 
 const flipSound = document.getElementById("flip-sound");
-
+const warSound = document.getElementById("war-sound");
 const messages = document.getElementById('messages');
 
 const cardDiv = document.getElementById('completeDeck');
