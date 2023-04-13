@@ -49,21 +49,40 @@ const playRound = () => {
         console.log("END GANE")
         return;
     }
-
+    hidePlayedCards();
+    slideAniOn()
+    setTimeout(slideAniOff, 700);
+    
     let playerCard = playerDeck.shift();
     let computerCard = computerDeck.shift();
-    changeImage(playerCard, computerCard);
-    card.style.display = "block"
-    card2.style.display = "block"
+    setTimeout(changeImage, 500, playerCard, computerCard);
+    setTimeout(setPlayedCards, 550);
     playedPile.push(playerCard, computerCard);
     updateDeckCount()
-
 
     console.log(`Player plays ${playerCard.value} of ${playerCard.suit}`);
     console.log(`Computer plays ${computerCard.value} of ${computerCard.suit}`);
 
     checkRoundWinner(playerCard, computerCard);
+   
 };
+
+function setPlayedCards() {
+    card.style.display = "block";
+    card2.style.display = "block";
+}
+function hidePlayedCards() {
+    card.style.display = "none";
+    card2.style.display = "none";
+}
+function slideAniOn() {
+    cardContainer.classList.add('animate-card');
+    cardContainer2.classList.add('animate-card2');
+}
+function slideAniOff() {
+    cardContainer.classList.remove('animate-card');
+    cardContainer2.classList.remove('animate-card2');
+}
 
 function updateDeckCount(){
     pDeckCount = playerDeck.length;
@@ -129,3 +148,6 @@ const card2 = document.getElementById('card2');
 
 const counter1 = document.getElementById('counter1');
 const counter2 = document.getElementById('counter2');
+
+const cardContainer = document.querySelector('.cardReverse');
+const cardContainer2 = document.querySelector('.cardReverse2');
