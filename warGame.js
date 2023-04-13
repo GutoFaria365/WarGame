@@ -47,8 +47,8 @@ const dealCards = () => {
 
 const playRound = () => { 
     if(gameOverCheck()) {
-        console.log("END GANE")
-        messages.innerHTML = "END GANE";
+        console.log("END GAME")
+        messages.innerHTML = "END GAME";
         return;
     }
    
