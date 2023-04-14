@@ -1,5 +1,21 @@
 import {shuffledDeck, createDeck, shuffleDeck, changeImage} from "./deck.js";
 
+const button = document.getElementById('startGame');
+const button2 = document.getElementById('nextRound');
+const card = document.getElementById('card');
+const card2 = document.getElementById('card2');
+const cardReverse = document.getElementById('cardReverse');
+const cardReverse2 = document.getElementById('cardReverse2');
+const counter1 = document.getElementById('counter1');
+const counter2 = document.getElementById('counter2');
+const cardContainer = document.querySelector('.cardReverse');
+const cardContainer2 = document.querySelector('.cardReverse2');
+const flipSound = document.getElementById("flip-sound");
+const warSound = document.getElementById("war-sound");
+const messages = document.getElementById('messages');
+const cardDiv = document.getElementById('completeDeck');
+const cardDiv2 = document.getElementById('completeDeck2');
+
 let playerDeck = [];
 let pDeckCount = playerDeck.length;
 let computerDeck = [];
@@ -21,7 +37,6 @@ const CARD_VALUES = {
     "K" : 13,
     "A" : 14
 }
-
 
 function startGame() {
     button.style.display = "none"
@@ -75,43 +90,6 @@ const playRound = () => {
     setTimeout(checkRoundWinner, 2200, playerCard, computerCard);
 };
 
-function setPlayedCards() {
-    card.style.display = "block";
-    card2.style.display = "block";
-}
-function hidePlayedCards() {
-    card.style.display = "none";
-    card2.style.display = "none";
-}
-function setDeckCards() {
-    cardReverse.style.display = "block";
-    cardReverse2.style.display = "block";
-}
-function hideDeckCards() {
-    cardReverse.style.display = "none";
-    cardReverse2.style.display = "none";
-}
-function slideAniOn() {
-    cardContainer.classList.add('animate-card');
-    cardContainer2.classList.add('animate-card2');
-    flipSound.play();
-}
-function slideAniOff() {
-    cardContainer.classList.remove('animate-card');
-    cardContainer2.classList.remove('animate-card2');
-    button2.style.display = "block"
-}
-
-function rotateCardOn() {
-    cardContainer.classList.add('rotate-card');
-    cardContainer2.classList.add('rotate-card2');
-}
-
-function rotateCardOff() {
-    cardContainer.classList.remove('rotate-card');
-    cardContainer2.classList.remove('rotate-card2');
-}
-
 function updateDeckCount(){
     pDeckCount = playerDeck.length;
     cDeckCount = computerDeck.length;
@@ -156,6 +134,7 @@ function goWar(){
     gameOverCheck();
     updateDeckCount()
     setTimeout(playRound, 1500);
+    
 }
 
 function gameOverCheck() {
@@ -170,35 +149,40 @@ function gameOverCheck() {
     return false;
 }
 
-
-
-const button = document.getElementById('startGame');
-button.addEventListener('click', startGame);
-const button2 = document.getElementById('nextRound');
-button2.addEventListener('click', playRound);
-
-const card = document.getElementById('card');
-const card2 = document.getElementById('card2');
-
-const cardReverse = document.getElementById('cardReverse');
-const cardReverse2 = document.getElementById('cardReverse2');
-
-const counter1 = document.getElementById('counter1');
-const counter2 = document.getElementById('counter2');
-
-const cardContainer = document.querySelector('.cardReverse');
-const cardContainer2 = document.querySelector('.cardReverse2');
-
-const flipSound = document.getElementById("flip-sound");
-const warSound = document.getElementById("war-sound");
-const messages = document.getElementById('messages');
-
-const cardDiv = document.getElementById('completeDeck');
-const cardDiv2 = document.getElementById('completeDeck2');
-
-;
-
-
+function setPlayedCards() {
+    card.style.display = "block";
+    card2.style.display = "block";
+}
+function hidePlayedCards() {
+    card.style.display = "none";
+    card2.style.display = "none";
+}
+function setDeckCards() {
+    cardReverse.style.display = "block";
+    cardReverse2.style.display = "block";
+}
+function hideDeckCards() {
+    cardReverse.style.display = "none";
+    cardReverse2.style.display = "none";
+}
+function slideAniOn() {
+    cardContainer.classList.add('animate-card');
+    cardContainer2.classList.add('animate-card2');
+    flipSound.play();
+}
+function slideAniOff() {
+    cardContainer.classList.remove('animate-card');
+    cardContainer2.classList.remove('animate-card2');
+    button2.style.display = "block"
+}
+function rotateCardOn() {
+    cardContainer.classList.add('rotate-card');
+    cardContainer2.classList.add('rotate-card2');
+}
+function rotateCardOff() {
+    cardContainer.classList.remove('rotate-card');
+    cardContainer2.classList.remove('rotate-card2');
+}
 function addCardsToDeck() {
     const newCardDiv = document.createElement('div');
     newCardDiv.classList.add("cardReverseWar");
@@ -221,10 +205,8 @@ function addCardsToDeck() {
     newCardDiv2.style.display ="block"
 
     setTimeout(animateCard, 0, newCardDiv, newCardDiv2);
-    setTimeout(eraseWarCards, 2500, newCardDiv, newCardDiv2)
-    
-}
-  
+    setTimeout(eraseWarCards, 2500, newCardDiv, newCardDiv2)   
+} 
 function animateCard(cardDiv, cardDiv2) {
     flipSound.play();
     cardDiv.classList.add('animate-war');
@@ -234,4 +216,6 @@ function eraseWarCards(cardDiv, cardDiv2) {
     cardDiv.style.display ="none"
     cardDiv2.style.display ="none"
 }
-  
+
+button.addEventListener('click', startGame);
+button2.addEventListener('click', playRound);

@@ -1,38 +1,3 @@
-
-function changeImage(card1, card2) {
-    var sTopImg = document.getElementById("topSuits");
-    var vTopImg = document.getElementById("topValues");
-    var sBotImg = document.getElementById("botSuits");
-    var vBotImg = document.getElementById("botValues");
-    var sTopImg2 = document.getElementById("topSuits2");
-    var vTopImg2 = document.getElementById("topValues2");
-    var sBotImg2 = document.getElementById("botSuits2");
-    var vBotImg2 = document.getElementById("botValues2");
-
-    sTopImg.src = SUIT_IMAGE[card1.suit];
-    if(card1.suit === "heart" || card1.suit === "diamond"){
-        vTopImg.style.color = "red"
-        vBotImg.style.color = "red"
-    } else {
-        vTopImg.style.color = "black"
-        vBotImg.style.color = "black"
-    }
-    vTopImg.innerHTML = card1.value;
-    sBotImg.src = sTopImg.src;
-    vBotImg.innerHTML = vTopImg.innerHTML;
-
-    sTopImg2.src = SUIT_IMAGE[card2.suit];
-    if(card2.suit === "heart" || card2.suit === "diamond"){
-        vTopImg2.style.color = "red"
-        vBotImg2.style.color = "red"
-    } else {
-        vTopImg2.style.color = "black"
-        vBotImg2.style.color = "black"
-    }
-    vTopImg2.innerHTML = card2.value;
-    sBotImg2.src = sTopImg2.src;
-    vBotImg2.innerHTML = vTopImg2.innerHTML;
-}
 const SUIT_IMAGE = {
     "heart": "assets/Heart.png",
     "club": "assets/Club.png",
@@ -84,5 +49,40 @@ function shuffleDeck(deck) {
 //         shuffledDeck.push(deck[randomCard])
 //     })
 // }
+function changeImage(card1, card2) {
+    var sTopImg = document.getElementById("topSuits");
+    var vTopImg = document.getElementById("topValues");
+    var sBotImg = document.getElementById("botSuits");
+    var vBotImg = document.getElementById("botValues");
+    var sTopImg2 = document.getElementById("topSuits2");
+    var vTopImg2 = document.getElementById("topValues2");
+    var sBotImg2 = document.getElementById("botSuits2");
+    var vBotImg2 = document.getElementById("botValues2");
+
+    sTopImg.src = SUIT_IMAGE[card1.suit];
+    if(card1.suit === "heart" || card1.suit === "diamond"){
+        vTopImg.style.color = "red"
+        vBotImg.style.color = "red"
+    } else {
+        vTopImg.style.color = "black"
+        vBotImg.style.color = "black"
+    }
+    vTopImg.innerHTML = card1.value;
+    sBotImg.src = sTopImg.src;
+    vBotImg.innerHTML = vTopImg.innerHTML;
+
+    sTopImg2.src = SUIT_IMAGE[card2.suit];
+    if(card2.suit === "heart" || card2.suit === "diamond"){
+        vTopImg2.style.color = "red"
+        vBotImg2.style.color = "red"
+    } else {
+        vTopImg2.style.color = "black"
+        vBotImg2.style.color = "black"
+    }
+    vTopImg2.innerHTML = card2.value;
+    sBotImg2.src = sTopImg2.src;
+    vBotImg2.innerHTML = vTopImg2.innerHTML;
+}
 
 export {shuffledDeck, createDeck, shuffleDeck, changeImage};
+// module.export = {shuffledDeck, createDeck, shuffleDeck, changeImage};
